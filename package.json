@@ -1,0 +1,8 @@
+{
+  "name": "code-for-america-fastfrwrd",
+  "version": "0.1.0",
+  "devDependencies": {
+    "grunt": "^0.4",
+    "grunt-contrib-connect": "*"
+  }
+}

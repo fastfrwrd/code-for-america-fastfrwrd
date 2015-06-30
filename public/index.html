@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="codeforamerica.pmarbach.exercise">
+<head>
+  <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <style>
+  [ng-cloak] {
+    display: none;
+  }
+  </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div id="main" class="container" ng-cloak ng-controller="MainCtrl">
+    <h1>Hello {{ hello }}</h1>
+
+    <div class="row">
+      <div class="col-12-xs">
+        <table class="table">
+          <thead>
+            <tr>
+              <th ng-repeat="(key, val) in data[0]">{{ key }}</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr ng-repeat="point in data">
+              <td ng-repeat="(key, val) in point">{{ val }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
