@@ -15,10 +15,26 @@
 </head>
 <body>
   <div id="main" class="container" ng-cloak ng-controller="MainCtrl">
-    <h1>Hello {{ hello }}</h1>
+
+    <div class="row" ng-if="data">
+      <div class="col-12-xs">
+        <h2>Summary</h2>
+        <p>Out of the {{ data.length }} places in the dataset:</p>
+        <ul>
+          <li><strong>{{ getMax("Population Density").Name }}</strong> has the densest population with <strong>{{ getMax("Population Density")["Population Density"] }} pop/km<sup>2</sup></strong>.</li>
+          <li><strong>{{ getMax("Housing Density").Name }}</strong> has the densest housing with <strong>{{ getMax("Housing Density")["Housing Density"] }} pop/km<sup>2</sup></strong>.</li>
+          <li><strong>{{ getMin("Population Density").Name }}</strong> has the sparsest population with <strong>{{ getMin("Population Density")["Population Density"] }} pop/km<sup>2</sup></strong>.</li>
+          <li><strong>{{ getMin("Housing Density").Name }}</strong> has the sparsest housing with <strong>{{ getMin("Housing Density")["Housing Density"] }} pop/km<sup>2</sup></strong>.</li>
+          <li>The average population density for all {{ data.length }} places is <strong>{{ getAvg("Population Density") }} pop/km<sup>2</sup></strong>.</li>
+          <li>The average housing density for all {{ data.length }} places is <strong>{{ getAvg("Housing Density") }} pop/km<sup>2</sup></strong>.</li>
+        </ul>
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-12-xs">
+        <hr>
+        <h4>Raw data <small ng-if="data">{{ data.length }} points</small></h4>
         <table class="table">
           <thead>
             <tr>
